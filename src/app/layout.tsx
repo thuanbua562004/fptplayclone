@@ -20,7 +20,7 @@ export default function RootLayout({
   <body
   >
     <Suspense fallback={null}>
-          <Loader />
+        <Loader />
     </Suspense>
     <Header/>
     <main className="  w-full mx-auto sm:px-[100px] lg:px-[180px] px-3 ">

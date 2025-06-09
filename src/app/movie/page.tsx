@@ -22,7 +22,7 @@ export default async function ProductsPage({
     </h5>
     <ListMove  page={page}/>
     <div className="panigation">
-      {page ? <Panigation page={Number(page)}/> :""}
+      {page ? <Panigation page={Number(page)}/> :''}
     </div>
     </>
   );

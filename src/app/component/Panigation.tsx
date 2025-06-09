@@ -38,7 +38,7 @@ export default function Panigation({page =1}:{page:number}) {
 
     <div className="flex items-center justify-between border-t border-gray-200 px-4 py-10 sm:px-6 select-none cursor-pointer">
       {/* Mobile view */}
-      <div className="flex flex-1 justify-between sm:hidden">
+      <div className="flex flex-1 justify-between  sm:hidden">
         <a
             href={`/movie?page=${Number(page)-1}`}
 

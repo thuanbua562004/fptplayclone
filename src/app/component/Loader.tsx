@@ -1,9 +1,10 @@
 'use client'
 import { usePathname, useSearchParams } from 'next/navigation'
 import NProgress from 'nprogress'
-import 'nprogress/nprogress.css'
 import { useEffect } from 'react'
+import 'nprogress/nprogress.css'
 import '../styles/nprogress-custom.css'
+
 export default function Loader() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
@@ -11,11 +12,11 @@ export default function Loader() {
   useEffect(() => {
     NProgress.start()
 
-    const timer = setTimeout(() => {
+    const id = requestAnimationFrame(() => {
       NProgress.done()
-    }, 500)
+    })
 
-    return () => clearTimeout(timer)
+    return () => cancelAnimationFrame(id)
   }, [pathname, searchParams])
 
   return null

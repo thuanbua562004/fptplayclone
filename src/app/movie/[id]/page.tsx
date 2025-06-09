@@ -7,16 +7,16 @@ type PageProps = {
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
-  const { id } = params;
-  const response = await fetch(`https://ophim1.com/phim/${id}`);
-  const data = await response.json();
+// export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+//   const { id } = params;
+//   const response = await fetch(`https://ophim1.com/phim/${id}`);
+//   const data = await response.json();
 
-  return {
-    title: 'Phim hay nhất: ' + (data.movie?.name || 'Phim hay nhất'),
-    description: data.movie?.origin_name || 'Xem phim miễn phí chất lượng cao!',
-  };
-}
+//   return {
+//     title: 'Phim hay nhất: ' + (data.movie?.name || 'Phim hay nhất'),
+//     description: data.movie?.origin_name || 'Xem phim miễn phí chất lượng cao!',
+//   };
+// }
 
 export default async function Page({ params }: PageProps) {
   const { id } = params;

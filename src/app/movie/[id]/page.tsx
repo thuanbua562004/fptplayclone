@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import MovieDetail from '@/app/component/MovieDetail';
 import { redirect } from 'next/navigation';
 
-export async function generateMetadata({ params }: { params: { id: number } }): Promise<Metadata> {
-  const { id } = await params
+export async function generateMetadata({ params }: { params: Promise<{ id: string }> }): Promise<Metadata> {
+  const { id } = await(params)
   const response = await fetch(`https://ophim1.com/phim/${id}`);
   const data = await response.json();
   
@@ -13,8 +13,8 @@ export async function generateMetadata({ params }: { params: { id: number } }): 
   };
 }
 
-export default async function Page({ params }: { params: { id: number } }) {
-  const { id } = await params
+export default async function Page({ params }: { params:Promise<{ id: string }> }) {
+  const { id } = await(params)
   const response = await fetch(`https://ophim1.com/phim/${id}`);
   const movieDetail = await response.json();
   if(movieDetail.status == false){

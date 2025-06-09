@@ -1,0 +1,15 @@
+
+
+/* Tùy chỉnh thanh loader */
+#nprogress .bar {
+  background: rgb(255, 142, 43);         /* Màu thanh load */
+  height: 5px;              /* Độ dày */
+}
+
+#nprogress .spinner {
+  display: none;           /* Ẩn spinner nếu muốn */
+}
+
+#nprogress .peg {
+  box-shadow: 0 0 10px rgb(166, 169, 14), 0 0 5px rgb(255, 158, 47); /* Hiệu ứng sáng */
+}
